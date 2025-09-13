@@ -1,1 +1,102 @@
-Enter notes here 
+🧩 Laundr Task Breakdown (MVP)
+1. Setup & Infrastructure
+
+ Create GitHub repo + project board.
+
+ Decide stack (React/Next.js + Node.js/Express + Firebase/Postgres).
+
+ Set up front-end boilerplate (React project).
+
+ Set up back-end boilerplate (Express server + DB connection).
+
+2. Design & Branding
+
+ Create wireframes (building selector → machine list → machine page → dashboard).
+
+ Define color scheme, typography, logo for Laundr.
+
+ Build quick Figma mockups for consistency.
+
+3. Back-End Core
+
+ Define DB schema:
+
+Machines (id, building, status, timer_end, started_by).
+
+Usage logs (machine_id, start_time, end_time, water, emissions).
+
+ Build API endpoints:
+
+GET /machines → list + statuses.
+
+POST /start/:id → start cycle (QR/manual).
+
+PUT /end/:id → end/reset cycle.
+
+ Implement timer logic → auto-reset to “available.”
+
+4. Front-End Core
+
+ Build homepage → building selector.
+
+ Machine list page → display machines (available, in use, time left).
+
+ Machine card → show Scan QR + Start Manually buttons.
+
+ Integrate with back-end APIs to fetch and update machine states.
+
+5. QR & Manual Start
+
+ Implement QR scan (React QR library).
+
+ Implement manual start (dropdown/select machine + confirm).
+
+ Both flows call the same POST /start/:id API.
+
+ Show countdown timer on front-end once started.
+
+6. Sustainability Tracking
+
+ Research average washer/dryer water + energy usage.
+
+ Create formulas for per-cycle water + CO₂ emissions.
+
+ Add usage logging (store each cycle’s data).
+
+ Build sustainability dashboard:
+
+Total water used.
+
+Total emissions.
+
+Per building/user breakdown.
+
+7. UX & UI Polish
+
+ Style machine list with clean, mobile-first design.
+
+ Add Laundr branding (logo + color scheme).
+
+ Ensure responsiveness (works on phones + laptops).
+
+ Add error handling (e.g., starting a machine already in use).
+
+8. Testing & Debugging
+
+ Test QR flow end-to-end.
+
+ Test manual start fallback.
+
+ Test multiple users marking machines simultaneously.
+
+ Validate sustainability data is updating correctly.
+
+9. Deployment
+
+ Deploy front-end (Vercel/Netlify).
+
+ Deploy back-end (Render/Heroku).
+
+ Seed database with sample buildings + machines.
+
+ Share demo URL + instructions for use.
